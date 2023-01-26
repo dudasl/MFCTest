@@ -27,6 +27,7 @@ END_MESSAGE_MAP()
 
 // CMFCSearchCtrl message handlers
 
+#ifndef USE_SetBrowseButtonImage
 void CMFCSearchCtrl::OnDrawBrowseButton(CDC* pDC, CRect rect, BOOL bIsButtonPressed, BOOL bIsButtonHot)
 {
     HICON search_icon = ::LoadIcon(GetModuleHandle(NULL), MAKEINTRESOURCE(IDI_SEARCH_ICON));
@@ -35,6 +36,7 @@ void CMFCSearchCtrl::OnDrawBrowseButton(CDC* pDC, CRect rect, BOOL bIsButtonPres
     else
         return CMFCEditBrowseCtrl::OnDrawBrowseButton(pDC, rect, bIsButtonPressed, bIsButtonHot);
 }
+#endif
 
 void CMFCSearchCtrl::OnBrowse()
 {

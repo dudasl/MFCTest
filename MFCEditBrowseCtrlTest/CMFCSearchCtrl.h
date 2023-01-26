@@ -14,7 +14,9 @@ public:
 protected:
 	DECLARE_MESSAGE_MAP()
 
+#ifndef USE_SetBrowseButtonImage
     virtual void OnDrawBrowseButton(CDC* pDC, CRect rect, BOOL bIsButtonPressed, BOOL bIsButtonHot);
+#endif
     virtual void OnBrowse();
 };
 

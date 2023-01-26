@@ -11,4 +11,7 @@
 #include "framework.h"
 #include <afxcontrolbars.h>
 
+// Comment this if you want use custom draw of browse button
+#define USE_SetBrowseButtonImage
+
 #endif //PCH_H

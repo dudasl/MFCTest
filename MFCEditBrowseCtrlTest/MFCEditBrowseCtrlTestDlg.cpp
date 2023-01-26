@@ -46,7 +46,12 @@ BOOL CMFCEditBrowseCtrlTestDlg::OnInitDialog()
 	SetIcon(m_hIcon, TRUE);			// Set big icon
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 
-	// TODO: Add extra initialization here
+#ifdef USE_SetBrowseButtonImage
+    // This code should go to initialize control. But how?
+    HICON search_icon = ::LoadIcon(GetModuleHandle(NULL), MAKEINTRESOURCE(IDI_SEARCH_ICON));
+    if (search_icon)
+        this->search_edit_ctrl_.SetBrowseButtonImage(search_icon);
+#endif
 
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
