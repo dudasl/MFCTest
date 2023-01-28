@@ -30,6 +30,7 @@ private:
 
     CString font_name_value_;
     CString script_name_value_;
+    CString full_name_value_;
 
 private:
     void FillFontInfo(const CMFCFontInfo* fontInfo);

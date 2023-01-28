@@ -21,6 +21,7 @@ CMFCFontComboBoxTestDlg::CMFCFontComboBoxTestDlg(CWnd* pParent /*=nullptr*/)
 	: CDialogEx(IDD_MFCFONTCOMBOBOXTEST_DIALOG, pParent)
     , font_name_value_(_T(""))
     , script_name_value_(_T(""))
+    , full_name_value_(_T(""))
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
@@ -31,6 +32,7 @@ void CMFCFontComboBoxTestDlg::DoDataExchange(CDataExchange* pDX)
     DDX_Control(pDX, IDC_FONT_COMBO, font_combo_);
     DDX_Text(pDX, IDC_FONT_NAME_STATIC, font_name_value_);
     DDX_Text(pDX, IDC_SCRIPT_NAME_STATIC, script_name_value_);
+    DDX_Text(pDX, IDC_FULL_NAME_STATIC, full_name_value_);
 }
 
 BEGIN_MESSAGE_MAP(CMFCFontComboBoxTestDlg, CDialogEx)
@@ -45,10 +47,12 @@ void CMFCFontComboBoxTestDlg::FillFontInfo(const CMFCFontInfo* fontInfo)
     if (fontInfo == nullptr) {
         this->font_name_value_.Empty();
         this->script_name_value_.Empty();
+        this->full_name_value_.Empty();
     }
     else {
         this->font_name_value_ = fontInfo->m_strName;
         this->script_name_value_ = fontInfo->m_strScript;
+        this->full_name_value_ = fontInfo->GetFullName();
     }
 
     this->UpdateData(FALSE);
