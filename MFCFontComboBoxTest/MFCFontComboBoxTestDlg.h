@@ -24,6 +24,16 @@ public:
 
 
 // Implementation
+private:
+    LONG init_dlg_width_ = 0;
+    LONG init_dlg_height_ = 0;
+
+    CString font_name_value_;
+    CString script_name_value_;
+
+private:
+    void FillFontInfo(const CMFCFontInfo* fontInfo);
+
 protected:
 	HICON m_hIcon;
 
@@ -34,4 +44,7 @@ protected:
 	DECLARE_MESSAGE_MAP()
     CMFCFontComboBoxEx font_combo_;
     CFont font_;
+public:
+    afx_msg void OnGetMinMaxInfo(MINMAXINFO* lpMMI);
+    afx_msg void OnSelchangeFontCombo();
 };
