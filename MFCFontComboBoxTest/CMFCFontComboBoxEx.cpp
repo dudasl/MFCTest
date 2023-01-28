@@ -34,9 +34,9 @@ void CMFCFontComboBoxEx::OnDrawItem(int nIDCtl, LPDRAWITEMSTRUCT lpDrawItemStruc
 {
     if (nIDCtl == this->GetDlgCtrlID()) {
         if (lpDrawItemStruct->itemID == 0 || lpDrawItemStruct->itemID == 1) {
-            LPCTSTR all_fonts_text = _T("All fonts");
             LPCTSTR recent_fonts_text = _T("Recent fonts");
-            LPCTSTR text_to_draw = lpDrawItemStruct->itemID == 0 ? all_fonts_text : recent_fonts_text;
+            LPCTSTR all_fonts_text = _T("All fonts");
+            LPCTSTR text_to_draw = lpDrawItemStruct->itemID == 0 ? recent_fonts_text : all_fonts_text;
             int text_to_draw_len = static_cast<int>(_tcslen(text_to_draw));
             HBRUSH brush = ::CreateSolidBrush(RGB(200, 200, 200));
             HFONT font = NULL;
